@@ -62,4 +62,4 @@ jobs:
         run: npm ci
 
       - name: Check libraries for known vulnerabilities
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=highsss
