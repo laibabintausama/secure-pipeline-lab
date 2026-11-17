@@ -1,8 +1,11 @@
 const express = require('express');
 const _ = require('lodash');
 const { exec } = require('child_process');
+const helmet = require('helmet'); // 1. Require helmet
 
 const app = express();
+app.use(helmet()); // 2. Use helmet to secure HTTP headers
+
 const DB_PASSWORD = 'admin123'; // Problem: hard-coded password
 
 app.get('/', (req, res) => {
@@ -29,4 +32,3 @@ app.get('/merge', (req, res) => {
 });
 
 app.listen(3000, () => console.log('App running on http://localhost:3000'));
-
